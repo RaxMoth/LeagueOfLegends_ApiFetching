@@ -14,13 +14,12 @@ app.use("/maxseite", maxRoute);
 
 //Routes
 app.get("/", (req, res) => {
-    console.log("Ich bin ein Diddi");
+    console.log("Home Seite");
 });
 
 //Save in DB
 app.post("/", async (req, res) => {
-    console.log("Ich bin es");
-    console.log();
+    console.log("Saved in DB");
     var gameData = await gamesdata();
 
     for (var data of gameData) {
