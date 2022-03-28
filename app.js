@@ -17,6 +17,8 @@ app.get("/", (req, res) => {
     console.log("Ich bin ein Diddi");
 });
 
+app.get("/", (req, res) => {});
+
 //Save in DB
 app.post("/", async (req, res) => {
     console.log("Ich bin es");

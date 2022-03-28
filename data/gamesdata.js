@@ -76,6 +76,7 @@ const response = async function (matchID) {
                         console.log("response end");
                         games.push(JSON.parse(Buffer.concat(data).toString()));
                         resolve();
+                        //Debug
                         //console.log(games);
                         /*  for (var game of games){
                     for (var participant of game.info.participants){
