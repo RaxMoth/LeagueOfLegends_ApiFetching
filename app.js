@@ -13,12 +13,14 @@ app.use("/eumelseite", eumelRoute);
 app.use("/maxseite", maxRoute);
 
 //Routes
-app.get("/", (req, res) => {
+
+app.get("/", (req, res, next) => {
     console.log("Home Seite");
+    //next();
 });
-
+/*
 app.get("/", (req, res) => {});
-
+*/
 //Save in DB
 app.post("/", async (req, res) => {
     console.log("Saved in DB");
