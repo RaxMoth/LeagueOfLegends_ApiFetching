@@ -2,16 +2,13 @@ const express = require("express");
 const router = express.Router();
 
 const gamesSchema = require("../models/gamesSchema");
+const participantsSchema = require("../models/schemas/participantsSchemas/participantsSchema");
 
 //Basic Route & Get Data from DB
 router.route("/data").get(async (req, res) => {
-    var games = await gamesSchema.find(
-        // Stage 1: Filter pizza order documents by pizza size
-        {
-            $match: { summonerNamesize: "AconTell" },
-        }
-    );
-    res.status(200).json(games);
+    var name = await participantsSchema.find({ summonerName: "AconTell" });
+    var game = await gamesSchema.find({ gameMode: "CLASSIC" });
+    res.status(200).json(name);
     //res.send("Hey ich bin auf meiner Seite hier kommen die Kennen Stats hin");
 });
 

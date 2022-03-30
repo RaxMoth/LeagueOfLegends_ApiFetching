@@ -46,6 +46,7 @@ const getMatchID = async function () {
 
 const matches = async function () {
     var gameDatas = [];
+
     for (var matchID of await getMatchID()) {
         console.log(matchID);
         for (var gameData of await response(matchID)) {
