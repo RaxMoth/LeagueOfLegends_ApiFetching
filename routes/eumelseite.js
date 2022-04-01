@@ -7,7 +7,7 @@ const participantsSchema = require("../models/schemas/participantsSchemas/partic
 //Basic Route & Get Data from DB
 router.route("/data").get(async (req, res) => {
     var name = await participantsSchema.find({ summonerName: "AconTell" });
-    var game = await gamesSchema.find({ gameMode: "CLASSIC" });
+    //var game = await gamesSchema.find({ gameMode: "CLASSIC" });
     res.status(200).json(name);
     //res.send("Hey ich bin auf meiner Seite hier kommen die Kennen Stats hin");
 });
