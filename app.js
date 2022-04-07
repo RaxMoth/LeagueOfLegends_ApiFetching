@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
 const gamesdata = require("./data/gamesdata");
 const gamesSchema = require("./models/gamesSchema");
 const challengesSchema = require("./models/schemas/participantsSchemas/challengesSchema");
@@ -13,7 +14,7 @@ const maxRoute = require("./routes/maxseite");
 
 app.use("/eumelseite", eumelRoute);
 app.use("/maxseite", maxRoute);
-
+app.use(cors());
 //Routes
 
 app.get("/", (req, res, next) => {
