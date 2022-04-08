@@ -11,10 +11,10 @@ require("dotenv/config");
 //import routes
 const eumelRoute = require("./routes/eumelseite");
 const maxRoute = require("./routes/maxseite");
-
+app.use(cors());
 app.use("/eumelseite", eumelRoute);
 app.use("/maxseite", maxRoute);
-app.use(cors());
+
 //Routes
 
 app.get("/", (req, res, next) => {
