@@ -10,7 +10,8 @@ require("dotenv/config");
 const eumel =
     "qPjV7l9FWyjz67a9cmnhztY-HlA-emBfGHLUpXKTHCDEVrJhrMAjVQdEK5jLJmUycDQwaSPBaTaflw";
 
-//const matchID = "EUW1_5746047285";
+
+//Beispiel const matchID = "EUW1_5746047285";
 const getMatchID = async function () {
     let matchIDs = [];
 
