@@ -6,7 +6,6 @@ const gamesSchema = require("../models/gamesSchema");
 //Basic Route & Get Data from DB
 router.route("/data").get(async (req, res) => {
     var games = await gamesSchema.find(
-        // Stage 1: Filter pizza order documents by pizza size
         {
             $match: { summonerNamesize: "AconTell" },
         }
