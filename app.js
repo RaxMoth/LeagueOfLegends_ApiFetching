@@ -1,47 +1,19 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const gamesdata = require("./data/gamesdata");
-const gamesSchema = require("./models/gamesSchema");
 const app = express();
-require("dotenv/config");
 
 //import routes
-const eumelRoute = require("./routes/eumelseite");
-const maxRoute = require("./routes/maxseite");
-
-app.use("/eumelseite", eumelRoute);
-app.use("/maxseite", maxRoute);
+const playerRoutes = require("./routes/players.routes");
+const gameDataRoutes = require("./routes/gamedata.routes");
 
 //Routes
-app.get("/", (req, res, next) => {
-    console.log("Home Seite");
-    //next();
-});
-/*
-app.get("/", (req, res) => {});
-*/
-
-//Save in DB
-app.post("/", async (req, res) => {
-    console.log("Saved in DB");
-    var gameData = await gamesdata();
-
-    for (var data of gameData) {
-        await gamesSchema.create(data);
-    }
-
-    res.status(200).json({ success: true });
-    /*const gamesschema = new gamesSchema({
-        games: req.body.games,
-    });
-    
-    games.save()
-    .then(data => {
-        res.json(data);
-    });*/
-});
-
-app.listen(8000);
+app.use("/players", playerRoutes);
+app.use("/gamesdata", gameDataRoutes);
 
 // Connect to db
-mongoose.connect(process.env.DB_CONNECTION, () => console.log("MaxRoth"));
+mongoose.connect(process.env.DB_CONNECTION, () =>
+    console.log("Connected to DB")
+);
+
+//Start Server
+app.listen(8000);
