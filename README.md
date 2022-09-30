@@ -1,2 +1,2 @@
 # LOLwebsite
-Bei diesem Projekt fehlt die .env Datei, da diese persönliche Daten (wie z.B. die Login Daten zur MongoDB Datenbank) enthält + den aktuellen API Key von Riot den ich nicht veröffentlichen darf.
+This project is missing the .env file, because it contains personal data (like the login data to the MongoDB database) + the current API key from Riot which I am not allowed to publish.
